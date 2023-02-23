@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web:
+    build: 
+    # you can specify if the related files are in a specific folder. In this case they are in the main menu
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - /app/node_modules
+      - .:/app
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    # We do not need to specify any ports because the test suite does not use any
+    volumes:
+      - /app/node_modules
+      - .:/app
+    command: ["npm", "run", "test"]
