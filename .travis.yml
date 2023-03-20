@@ -7,5 +7,4 @@ before_install:
   
 script:
   - docker run -e CI=TRUE vklekler/docker-react npm run test -- --coverage
-
-
+  
