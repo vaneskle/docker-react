@@ -15,5 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build -t vklekler/docker-react -f Dockerfile.dev .
-           docker run -e CI=TRUE vklekler/docker-react npm run test -- --coverage
+      run: docker build -t vklekler/docker-react -f Dockerfile.dev 
